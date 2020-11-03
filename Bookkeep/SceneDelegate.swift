@@ -14,10 +14,48 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let mainVC = MainViewController(nibName: "MainViewController", bundle: nil)
+        let statVC = StatisticsViewController(nibName: "StatisticsViewController", bundle: nil)
+        let moreVC = MoreViewController(nibName: "MoreViewController", bundle: nil)
+        
+        let tbc = UITabBarController.init()
+        
+        mainVC.tabBarItem.title = "日曆"
+        mainVC.tabBarItem.image = UIImage.init(systemName: "doc.text.fill")
+        statVC.tabBarItem.title = "統計"
+        statVC.tabBarItem.image = UIImage.init(systemName: "dollarsign.square.fill")
+        moreVC.tabBarItem.title = "更多"
+        moreVC.tabBarItem.image = UIImage.init(systemName: "square.grid.2x2.fill")
+        
+        tbc.viewControllers = [mainVC,statVC,moreVC]
+        
+        tbc.tabBarItem.badgeColor = UIColor.init(hexFromString: "#707070")
+        tbc.tabBar.tintColor = UIColor.init(hexFromString: "#008880")
+        tbc.tabBar.barTintColor = .white
+        
+        mainVC.tabBarHeight = CGFloat(tbc.tabBar.bounds.height)
+        
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        window?.rootViewController = tbc //navController
+        window?.makeKeyAndVisible()
+        
+       if #available(iOS 13.0, *) {
+        
+        let statusBar1 =  UIView()
+        statusBar1.frame = (UIApplication.shared.keyWindow?.windowScene?.statusBarManager!.statusBarFrame)!
+        statusBar1.backgroundColor = UIColor(hexFromString: "#498C51")
+
+        UIApplication.shared.keyWindow?.addSubview(statusBar1)
+
+       } else {
+          let statusBar1: UIView = UIApplication.shared.value(forKey:"statusBar") as! UIView
+          statusBar1.backgroundColor = UIColor.black
+       }
+        UIApplication.shared.statusBarStyle = .lightContent
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

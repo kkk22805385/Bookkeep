@@ -10,11 +10,23 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    let serialQueue : DispatchQueue = DispatchQueue(label: "serialQueue")
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            GlobalValues.appVersion = version
+        }
+        //appBuild CFBundleVersion
+        if let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+            GlobalValues.appBuild = build
+        }
+
+        serialQueue.sync {
+            AppInit()   //初始化DB
+            AppOpen()   //資料庫開啟
+        }
+        
         return true
     }
 
@@ -30,6 +42,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    func AppInit(){
+        //初始化db
+        let fm = FileManager.default
+        
+        let appUrl = try! fm.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+        let dbPath = (appUrl.path as NSString).appendingPathComponent("account.db")
+        let isExists = fm.fileExists(atPath: dbPath)
+        if !isExists {
+            let defaultDBPath = (Bundle.main.resourcePath! as NSString).appendingPathComponent("account.db")
+            do {
+                try fm.copyItem(atPath: defaultDBPath, toPath: dbPath)
+                print("success")
+            } catch  {
+                print(error)
+            }
+        }
+    }
+    func AppOpen() {
+
+        accountDB = FMDatabase.init(path:getDBPath())
+        if let db = accountDB {
+            if !db.open(){
+                print("FMDatabase無法開啟")
+            }else{
+                print("FMDatabase可以開啟")
+            }
+        }
+        accountDBqueue = FMDatabaseQueue.init(path: getDBPath())
+        
+        Setup().initVar()
     }
 
 
