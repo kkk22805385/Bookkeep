@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,6 +56,9 @@
                             </constraints>
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" image="plus.circle.fill" catalog="system"/>
+                            <connections>
+                                <action selector="btnAddRecord:" destination="-1" eventType="touchUpInside" id="lrf-MZ-R6o"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.28627450980392155" green="0.5490196078431373" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -86,7 +89,7 @@
                         <outlet property="delegate" destination="-1" id="97Q-Kw-3MN"/>
                     </connections>
                 </collectionView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BwJ-AD-gU3">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="20" sectionFooterHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="BwJ-AD-gU3">
                     <rect key="frame" x="0.0" y="424" width="414" height="438"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
@@ -109,7 +112,7 @@
                 <constraint firstItem="3HF-8c-8Bc" firstAttribute="top" secondItem="hmR-4G-9Bt" secondAttribute="bottom" id="nsC-8h-bUg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BwJ-AD-gU3" secondAttribute="trailing" id="p0Z-Px-boO"/>
             </constraints>
-            <point key="canvasLocation" x="131.8840579710145" y="147.99107142857142"/>
+            <point key="canvasLocation" x="-148" y="139"/>
         </view>
     </objects>
     <resources>

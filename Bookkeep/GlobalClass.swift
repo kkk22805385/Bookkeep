@@ -81,5 +81,34 @@ import Foundation
     }
 }
 
+@objcMembers class typeInfo : NSObject{
+    var type = ""
+    var name = ""
+    
+    func searchTypeDB(str:String) -> [typeInfo]{
+        var types = [typeInfo]()
+        
+        var condictionDB = ""
+        if str == ""{
+            condictionDB = "SELECT * FROM typeInfo"
+        }else{
+            condictionDB = "SELECT * FROM typeInfo WHERE type = '\(str)'"
+        }
+        
+        if let db = accountDB {
+            if let rs = db.executeQuery( condictionDB , withArgumentsIn:[Any]() ) {
+                while rs.next() {
+                    let type = typeInfo()
+                    type.type = rs.getString(forColumn: "type")
+                    type.name = rs.getString(forColumn: "name")
+                    
+                    types.append(type)
+                }
+                rs.close()
+            }
+        }
+        return types
+    }
+}
 
 

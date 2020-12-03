@@ -1,18 +1,15 @@
 //
-//  DetailedTaViewCell.swift
+//  IncomeDetailTaViewCell.swift
 //  Bookkeep
 //
-//  Created by aa on 2020/9/30.
+//  Created by aa on 2020/11/3.
 //  Copyright © 2020 Bookkeep. All rights reserved.
 //
 
 import UIKit
 
-class DetailedTaViewCell: UITableViewCell {
-    @IBOutlet var labelDate: UILabel!
-    @IBOutlet var labelIcome: UILabel!
-    @IBOutlet var labelExpenditure: UILabel!
-    
+class IncomeDetailTaViewCell: UITableViewCell {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

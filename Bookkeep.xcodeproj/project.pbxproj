@@ -50,6 +50,10 @@
 		006EB0832524341C004FB18F /* DetailedTaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006EB0812524341C004FB18F /* DetailedTaViewCell.swift */; };
 		006EB0842524341C004FB18F /* DetailedTaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006EB0822524341C004FB18F /* DetailedTaViewCell.xib */; };
 		006EB08725246A1A004FB18F /* account.db in Resources */ = {isa = PBXBuildFile; fileRef = 006EB08625246A1A004FB18F /* account.db */; };
+		0079B61C2551613A005B87AA /* IncomeDetailTaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079B61A2551613A005B87AA /* IncomeDetailTaViewCell.swift */; };
+		0079B61D2551613A005B87AA /* IncomeDetailTaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0079B61B2551613A005B87AA /* IncomeDetailTaViewCell.xib */; };
+		0079B62125524F68005B87AA /* AddRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079B61F25524F68005B87AA /* AddRecordViewController.swift */; };
+		0079B62225524F68005B87AA /* AddRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0079B62025524F68005B87AA /* AddRecordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +108,10 @@
 		006EB0812524341C004FB18F /* DetailedTaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTaViewCell.swift; sourceTree = "<group>"; };
 		006EB0822524341C004FB18F /* DetailedTaViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedTaViewCell.xib; sourceTree = "<group>"; };
 		006EB08625246A1A004FB18F /* account.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = account.db; sourceTree = "<group>"; };
+		0079B61A2551613A005B87AA /* IncomeDetailTaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeDetailTaViewCell.swift; sourceTree = "<group>"; };
+		0079B61B2551613A005B87AA /* IncomeDetailTaViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeDetailTaViewCell.xib; sourceTree = "<group>"; };
+		0079B61F25524F68005B87AA /* AddRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordViewController.swift; sourceTree = "<group>"; };
+		0079B62025524F68005B87AA /* AddRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddRecordViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +158,10 @@
 				006EB07D25242DFB004FB18F /* BOMTaViewCell.xib */,
 				006EB0812524341C004FB18F /* DetailedTaViewCell.swift */,
 				006EB0822524341C004FB18F /* DetailedTaViewCell.xib */,
+				0079B61A2551613A005B87AA /* IncomeDetailTaViewCell.swift */,
+				0079B61B2551613A005B87AA /* IncomeDetailTaViewCell.xib */,
+				0079B61F25524F68005B87AA /* AddRecordViewController.swift */,
+				0079B62025524F68005B87AA /* AddRecordViewController.xib */,
 				006E5546250B62380089AA9D /* StatisticsViewController.swift */,
 				006E5547250B62380089AA9D /* StatisticsViewController.xib */,
 				006E554A250B62420089AA9D /* MoreViewController.swift */,
@@ -296,6 +308,8 @@
 				006EB0842524341C004FB18F /* DetailedTaViewCell.xib in Resources */,
 				006EB07F25242DFB004FB18F /* BOMTaViewCell.xib in Resources */,
 				006EAFF92522FF0C004FB18F /* icon167x167.jpg in Resources */,
+				0079B62225524F68005B87AA /* AddRecordViewController.xib in Resources */,
+				0079B61D2551613A005B87AA /* IncomeDetailTaViewCell.xib in Resources */,
 				006EAFF62522FF0C004FB18F /* icon58x58.jpg in Resources */,
 				006EAFF02522FF0C004FB18F /* icon80x80.jpg in Resources */,
 				006EAFEF2522FF0C004FB18F /* icon20x20.jpg in Resources */,
@@ -320,11 +334,13 @@
 				006D4551250F467200CC65B1 /* DateCoViewCell.swift in Sources */,
 				006E554C250B62430089AA9D /* MoreViewController.swift in Sources */,
 				006EB06625232197004FB18F /* FMResultSet.m in Sources */,
+				0079B61C2551613A005B87AA /* IncomeDetailTaViewCell.swift in Sources */,
 				006EB06525232197004FB18F /* FMDatabase.m in Sources */,
 				006EB07725232562004FB18F /* accExtension.swift in Sources */,
 				006EB074252322A5004FB18F /* GlobalFunction.swift in Sources */,
 				006EB06925232197004FB18F /* FMDatabaseAdditions.m in Sources */,
 				006EB056252316C6004FB18F /* GlobalValues.swift in Sources */,
+				0079B62125524F68005B87AA /* AddRecordViewController.swift in Sources */,
 				006EB0832524341C004FB18F /* DetailedTaViewCell.swift in Sources */,
 				006E553C250B5DB00089AA9D /* MainViewController.swift in Sources */,
 				006EB05325231677004FB18F /* KeychainWrapper.swift in Sources */,

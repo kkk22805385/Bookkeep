@@ -43,19 +43,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = tbc //navController
         window?.makeKeyAndVisible()
         
-       if #available(iOS 13.0, *) {
-        
-        let statusBar1 =  UIView()
-        statusBar1.frame = (UIApplication.shared.keyWindow?.windowScene?.statusBarManager!.statusBarFrame)!
-        statusBar1.backgroundColor = UIColor(hexFromString: "#498C51")
-
-        UIApplication.shared.keyWindow?.addSubview(statusBar1)
-
-       } else {
-          let statusBar1: UIView = UIApplication.shared.value(forKey:"statusBar") as! UIView
-          statusBar1.backgroundColor = UIColor.black
-       }
-        UIApplication.shared.statusBarStyle = .lightContent
+       
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -29,12 +29,14 @@ class MainViewController: UIViewController,UITextFieldDelegate {
     var total = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         dateCoView.register(UINib.init(nibName: "DateCoViewCell", bundle: nil), forCellWithReuseIdentifier: "DateCoViewCell")
         dateBgView.backgroundColor = UIColor(hexFromString: "#498C51")
         // Do any additional setup after loading the view
         
         accTaView.register(UINib.init(nibName: "BOMTaViewCell", bundle: nil),forCellReuseIdentifier:"BOMTaViewCell")
         accTaView.register(UINib.init(nibName: "DetailedTaViewCell", bundle: nil),forCellReuseIdentifier:"DetailedTaViewCell")
+        accTaView.register(UINib.init(nibName: "IncomeDetailTaViewCell", bundle: nil),forCellReuseIdentifier:"IncomeDetailTaViewCell")
         accTaView.tableFooterView = UIView()
         accTaView.separatorStyle = .none
         
@@ -43,6 +45,13 @@ class MainViewController: UIViewController,UITextFieldDelegate {
         btnDate.setTitle(date , for: .normal)
         days = changeDayOfWeek()
         takeValue()
+        
+        
+        
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        statusBar()
     }
     @IBAction func btnDate(_ sender: UIButton) {
         let height = view.bounds.height - 230 - tabBarHeight
@@ -74,6 +83,11 @@ class MainViewController: UIViewController,UITextFieldDelegate {
         
         
     }
+    @IBAction func btnAddRecord(_ sender: Any) {
+        let view = AddRecordViewController(nibName: "AddRecordViewController", bundle: nil)
+        present(view, animated: true, completion: nil)
+    }
+    
     @objc func dueDateChanged(sender:UIDatePicker){
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
@@ -148,18 +162,23 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0{
             return 140
+        }else if indexPath.section == 1{
+            return 80
         }else{
             return 50
         }
+        
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
             return 1
+        }else if section == 1{
+            return 1
         }else{
-            return 2
+            return 10
         }
     }
     
@@ -171,8 +190,13 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
             
             
             return cell
-        }else{
+        }else if indexPath.section == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailedTaViewCell", for: indexPath as IndexPath) as! DetailedTaViewCell
+            
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "IncomeDetailTaViewCell", for: indexPath as IndexPath) as! IncomeDetailTaViewCell
+            
             
             return cell
         }
@@ -255,4 +279,26 @@ extension MainViewController{
         }
         total = income + expenditure
     }
+    
+    func statusBar(){
+        let color = UIColor(hexFromString: "#498C51")
+        if #available(iOS 13.0, *) {
+            let statusBar = UIView(frame: UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
+            statusBar.backgroundColor = color
+            statusBar.tag = 100
+            UIApplication.shared.keyWindow?.addSubview(statusBar)
+
+        } else {
+
+            let statusBar = UIApplication.shared.value(forKeyPath:"statusBarWindow.statusBar") as? UIView
+            statusBar?.backgroundColor = color
+
+        }
+        if color == UIColor.black{
+            UIApplication.shared.statusBarStyle = .lightContent
+        }else{
+            UIApplication.shared.statusBarStyle = .darkContent
+        }
+    }
 }
+
