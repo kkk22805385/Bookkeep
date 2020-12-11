@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 //MARK:取得資料庫路徑
 func getDBPath() -> String {
@@ -14,4 +15,31 @@ func getDBPath() -> String {
     let dbPath = (appUrl.path as NSString).appendingPathComponent("account.db")
     
     return dbPath
+}
+
+func statusBar(color:UIColor){
+    if #available(iOS 13.0, *) {
+        let statusBar = UIView(frame: UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
+        statusBar.backgroundColor = color
+        statusBar.tag = 100
+        UIApplication.shared.keyWindow?.addSubview(statusBar)
+
+    } else {
+
+        let statusBar = UIApplication.shared.value(forKeyPath:"statusBarWindow.statusBar") as? UIView
+        statusBar?.backgroundColor = color
+
+    }
+    if color == UIColor.black{
+        UIApplication.shared.statusBarStyle = .lightContent
+    }else{
+        UIApplication.shared.statusBarStyle = .darkContent
+    }
+}
+func dateConvStr(_ date:Date, dateFormat:String = "yyyy-MM-dd HH:mm:ss") -> String {
+    let formatter = DateFormatter()
+    formatter.locale = Locale.init(identifier: "zh_TW")
+    formatter.dateFormat = dateFormat
+    let date = formatter.string(from: date)
+    return date
 }

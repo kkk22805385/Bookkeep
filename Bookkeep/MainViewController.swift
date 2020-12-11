@@ -23,35 +23,36 @@ class MainViewController: UIViewController,UITextFieldDelegate {
     var month = Calendar.current.component(.month, from: Date())
     
     var days = [dateCoCell]()
-    var bkps = [bookkeepingInfo]()
-    var income = 0
-    var expenditure = 0
-    var total = 0
+    var monIncome = 0
+    var monExpenditure = 0
+    var monTotal = 0
+    var dayIncome = 0
+    var dayExpenditure = 0
+    var bkpInfos = [bookkeepingInfo]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setCell()
         
-        dateCoView.register(UINib.init(nibName: "DateCoViewCell", bundle: nil), forCellWithReuseIdentifier: "DateCoViewCell")
-        dateBgView.backgroundColor = UIColor(hexFromString: "#498C51")
-        // Do any additional setup after loading the view
+        days = changeDayOfWeek()
         
-        accTaView.register(UINib.init(nibName: "BOMTaViewCell", bundle: nil),forCellReuseIdentifier:"BOMTaViewCell")
-        accTaView.register(UINib.init(nibName: "DetailedTaViewCell", bundle: nil),forCellReuseIdentifier:"DetailedTaViewCell")
-        accTaView.register(UINib.init(nibName: "IncomeDetailTaViewCell", bundle: nil),forCellReuseIdentifier:"IncomeDetailTaViewCell")
-        accTaView.tableFooterView = UIView()
-        accTaView.separatorStyle = .none
+        var bkps = bookkeepingInfo().bkpInfo(year: String(year), month: String(month))
+        takeMonbal(bkps:bkps)
         
         let date = String(year) + "年" + String(month) + "月"
-        bkps = bookkeepingInfo().bkpInfo(year: String(year), month: String(month))
         btnDate.setTitle(date , for: .normal)
-        days = changeDayOfWeek()
-        takeValue()
         
         
+        let day = Calendar.current.component(.day, from: Date())
+        bkps = bookkeepingInfo().bkpInfo(year: String(year), month: String(month), day: String(day))
+        takeDatebal(bkps: bkps)
+        bkpInfos = bkps
         
+        //accTaView.setEditing(true, animated: false)
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        statusBar()
+        statusBar(color: UIColor(hexFromString: "#498C51"))
     }
     @IBAction func btnDate(_ sender: UIButton) {
         let height = view.bounds.height - 230 - tabBarHeight
@@ -79,15 +80,28 @@ class MainViewController: UIViewController,UITextFieldDelegate {
         
         textData.becomeFirstResponder()
         
+        let bkps = bookkeepingInfo().bkpInfo(year: String(year), month: String(month))
+        takeMonbal(bkps: bkps)
+        accTaView.reloadData()
         //sender.inputView = inView
         
         
     }
     @IBAction func btnAddRecord(_ sender: Any) {
+        var dateStr = ""
+        for date in days{
+            if date.cellState == "1"{
+                dateStr = (btnDate.titleLabel?.text)! + date.date + "日"
+            }
+        }
+                
         let view = AddRecordViewController(nibName: "AddRecordViewController", bundle: nil)
+        view.delegate = self
+        view.date = dateStr
         present(view, animated: true, completion: nil)
     }
     
+    //MARK:轉換時間
     @objc func dueDateChanged(sender:UIDatePicker){
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
@@ -100,11 +114,23 @@ class MainViewController: UIViewController,UITextFieldDelegate {
         btnDate.setTitle(newDate, for: .normal)
         
         days = changeDayOfWeek()
-        bkps = bookkeepingInfo().bkpInfo(year: String(year), month: String(month))
-        takeValue()
+        let bkps = bookkeepingInfo().bkpInfo(year: String(year), month: String(month))
+        takeMonbal(bkps:bkps)
         
         accTaView.reloadData()
         dateCoView.reloadData()
+    }
+    
+    func setCell(){
+        dateCoView.register(UINib.init(nibName: "DateCoViewCell", bundle: nil), forCellWithReuseIdentifier: "DateCoViewCell")
+        dateBgView.backgroundColor = UIColor(hexFromString: "#498C51")
+        // Do any additional setup after loading the view
+        
+        accTaView.register(UINib.init(nibName: "BOMTaViewCell", bundle: nil),forCellReuseIdentifier:"BOMTaViewCell")
+        accTaView.register(UINib.init(nibName: "DetailedTaViewCell", bundle: nil),forCellReuseIdentifier:"DetailedTaViewCell")
+        accTaView.register(UINib.init(nibName: "IncomeDetailTaViewCell", bundle: nil),forCellReuseIdentifier:"IncomeDetailTaViewCell")
+        accTaView.tableFooterView = UIView()
+        accTaView.separatorStyle = .none
     }
 }
 extension MainViewController :UICollectionViewDelegate,UICollectionViewDataSource{
@@ -154,14 +180,20 @@ extension MainViewController :UICollectionViewDelegate,UICollectionViewDataSourc
         }
         days[indexPath.row].cellState = "1"
         
+        let bkps = bookkeepingInfo().bkpInfo(year: String(year), month: String(month), day: days[indexPath.row].date)
+        takeDatebal(bkps: bkps)
+        
+        bkpInfos = bkps
+        
         accTaView.reloadData()
         dateCoView.reloadData()
+        closeKeyboard()
     }
 }
 extension MainViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0{
-            return 140
+            return 120
         }else if indexPath.section == 1{
             return 80
         }else{
@@ -178,41 +210,99 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
         }else if section == 1{
             return 1
         }else{
-            return 10
+            return bkpInfos.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
         if indexPath.section == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "BOMTaViewCell", for: indexPath as IndexPath) as! BOMTaViewCell
             
             cell.labelMonth.text = String(month) + "月結餘"
+            cell.labelBal.text = "$" + String(monTotal)
+            cell.labelIncome.text = "$" + String(monIncome)
+            cell.labelExpenses.text = "$" + String(monExpenditure)
             
+            if monTotal > 0 {
+                cell.labelBal.textColor = UIColor(hexFromString: "#498C51")
+            }else{
+                cell.labelBal.textColor = UIColor(hexFromString: "#FE545A")
+            }
+            cell.labelIncome.textColor = UIColor(hexFromString: "#498C51")
+            cell.labelExpenses.textColor = UIColor(hexFromString: "#FE545A")
+            
+            cell.selectionStyle = .none
             
             return cell
+            
         }else if indexPath.section == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailedTaViewCell", for: indexPath as IndexPath) as! DetailedTaViewCell
+            
+            cell.labelDate.text = searchDay(days: days) + "日"
+            cell.labelIcome.text = "$" + String(dayIncome)
+            cell.labelExpenditure.text = "$" + String(dayExpenditure)
+            
+            cell.selectionStyle = .none
             
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "IncomeDetailTaViewCell", for: indexPath as IndexPath) as! IncomeDetailTaViewCell
             
             
+            cell.labelBalance.text = "$" + bkpInfos[indexPath.row].balanceSheet
+            cell.labelReMark.text = bkpInfos[indexPath.row].remark
+            cell.labelTypeName.text = bkpInfos[indexPath.row].typeName
+            
+            if bkpInfos[indexPath.row].type == "支出" {
+                cell.labelBalance.textColor = UIColor(hexFromString: "#FE545A")
+            }else{
+                cell.labelBalance.textColor = UIColor(hexFromString: "#498C51")
+            }
+                    
             return cell
         }
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 2{
+            let view = AddRecordViewController(nibName: "AddRecordViewController", bundle: nil)
+            view.delegate = self
+            view.bkpInfo = bkpInfos[indexPath.row]
+            present(view, animated: true, completion: nil)
+        }
+        
+        closeKeyboard()
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                let delSuc = bookkeepingInfo().bkpDelete(bkp: bkpInfos[indexPath.row])
+                
+                if delSuc{
+                    title = "刪除成功"
+                }else{
+                    title = "刪除失敗"
+                }
+                let alertController = UIAlertController(title: title, message: "", preferredStyle: .alert)
+                self.present(alertController, animated: true, completion: nil)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { [self] in
+                        self.presentedViewController?.dismiss(animated: false, completion: nil)
+                        var bkps = bookkeepingInfo().bkpInfo(year: String(self.year), month: String(self.month))
+                        self.takeMonbal(bkps:bkps)
+                    
+                        bkps = bookkeepingInfo().bkpInfo(year: String(self.year), month: String(self.month),day: searchDay(days: days))
+                        self.takeDatebal(bkps: bkps)
+                            
+                        bkpInfos = bkps
+                    
+                        self.accTaView.reloadData()
+                }
+            }
+    }
     
 }
 
 extension MainViewController{
-    func dateConvStr(_ date:Date, dateFormat:String = "yyyy-MM-dd HH:mm:ss") -> String {
-        let formatter = DateFormatter()
-        formatter.locale = Locale.init(identifier: "zh_TW")
-        formatter.dateFormat = dateFormat
-        let date = formatter.string(from: date)
-        return date
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -265,40 +355,63 @@ extension MainViewController{
         }
         return retDate
     }
-    func takeValue(){
+    
+    func takeMonbal(bkps :[bookkeepingInfo]){
+        monIncome = 0
+        monExpenditure = 0
+        monTotal = 0
+        
         for arr in bkps{
-            income = 0
-            expenditure = 0
-            total = 0
-            let bal = Int(arr.balanceSheet)
-            if  bal! > 0 {
-                income = income + bal!
+            let bal = Int(arr.balanceSheet)!
+            if  arr.type == "收入" {
+                monIncome = monIncome + bal
             }else{
-                expenditure = expenditure + bal!
+                monExpenditure = monExpenditure + bal
             }
         }
-        total = income + expenditure
+        monTotal = monIncome - monExpenditure
+        
+        accTaView.reloadData()
+    }
+    func takeDatebal(bkps :[bookkeepingInfo]){
+        dayIncome = 0
+        dayExpenditure = 0
+        
+        for arr in bkps{
+            let bal = Int(arr.balanceSheet)!
+            if  arr.type == "收入" {
+                dayIncome = dayIncome + bal
+            }else{
+                dayExpenditure = dayExpenditure + bal
+            }
+        }
+        
+        accTaView.reloadData()
+    }
+    func searchDay(days:[dateCoCell]) -> String{
+        for day in days{
+            if day.cellState == "1"{
+                return day.date
+            }
+        }
+        return ""
     }
     
-    func statusBar(){
-        let color = UIColor(hexFromString: "#498C51")
-        if #available(iOS 13.0, *) {
-            let statusBar = UIView(frame: UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
-            statusBar.backgroundColor = color
-            statusBar.tag = 100
-            UIApplication.shared.keyWindow?.addSubview(statusBar)
-
-        } else {
-
-            let statusBar = UIApplication.shared.value(forKeyPath:"statusBarWindow.statusBar") as? UIView
-            statusBar?.backgroundColor = color
-
-        }
-        if color == UIColor.black{
-            UIApplication.shared.statusBarStyle = .lightContent
-        }else{
-            UIApplication.shared.statusBarStyle = .darkContent
-        }
+    @objc func closeKeyboard(){
+        self.view.endEditing(true)
     }
 }
 
+extension MainViewController:reloadTableView{
+    func reloadAcc() {
+        var bkps = bookkeepingInfo().bkpInfo(year: String(self.year), month: String(self.month))
+        self.takeMonbal(bkps:bkps)
+    
+        bkps = bookkeepingInfo().bkpInfo(year: String(self.year), month: String(self.month),day: searchDay(days: days))
+        self.takeDatebal(bkps: bkps)
+            
+        bkpInfos = bkps
+    
+        self.accTaView.reloadData()
+    }
+}

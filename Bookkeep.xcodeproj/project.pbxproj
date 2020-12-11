@@ -44,12 +44,15 @@
 		006EB06825232197004FB18F /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EB06325232197004FB18F /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		006EB06925232197004FB18F /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 006EB06425232197004FB18F /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		006EB074252322A5004FB18F /* GlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006EB073252322A5004FB18F /* GlobalFunction.swift */; };
-		006EB07725232562004FB18F /* accExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006EB07625232562004FB18F /* accExtension.swift */; };
 		006EB07E25242DFB004FB18F /* BOMTaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006EB07C25242DFB004FB18F /* BOMTaViewCell.swift */; };
 		006EB07F25242DFB004FB18F /* BOMTaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006EB07D25242DFB004FB18F /* BOMTaViewCell.xib */; };
 		006EB0832524341C004FB18F /* DetailedTaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006EB0812524341C004FB18F /* DetailedTaViewCell.swift */; };
 		006EB0842524341C004FB18F /* DetailedTaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006EB0822524341C004FB18F /* DetailedTaViewCell.xib */; };
 		006EB08725246A1A004FB18F /* account.db in Resources */ = {isa = PBXBuildFile; fileRef = 006EB08625246A1A004FB18F /* account.db */; };
+		006FC9152580A7B1000DC188 /* totalIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 006FC9142580A7B1000DC188 /* totalIcon.png */; };
+		006FC9192581C38B000DC188 /* StatistTaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006FC9172581C38B000DC188 /* StatistTaViewCell.swift */; };
+		006FC91A2581C38B000DC188 /* StatistTaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006FC9182581C38B000DC188 /* StatistTaViewCell.xib */; };
+		006FC92325820DD1000DC188 /* yearicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 006FC92225820DD1000DC188 /* yearicon.png */; };
 		0079B61C2551613A005B87AA /* IncomeDetailTaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079B61A2551613A005B87AA /* IncomeDetailTaViewCell.swift */; };
 		0079B61D2551613A005B87AA /* IncomeDetailTaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0079B61B2551613A005B87AA /* IncomeDetailTaViewCell.xib */; };
 		0079B62125524F68005B87AA /* AddRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079B61F25524F68005B87AA /* AddRecordViewController.swift */; };
@@ -102,12 +105,15 @@
 		006EB06325232197004FB18F /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
 		006EB06425232197004FB18F /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
 		006EB073252322A5004FB18F /* GlobalFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunction.swift; sourceTree = "<group>"; };
-		006EB07625232562004FB18F /* accExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accExtension.swift; sourceTree = "<group>"; };
 		006EB07C25242DFB004FB18F /* BOMTaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BOMTaViewCell.swift; sourceTree = "<group>"; };
 		006EB07D25242DFB004FB18F /* BOMTaViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BOMTaViewCell.xib; sourceTree = "<group>"; };
 		006EB0812524341C004FB18F /* DetailedTaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTaViewCell.swift; sourceTree = "<group>"; };
 		006EB0822524341C004FB18F /* DetailedTaViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedTaViewCell.xib; sourceTree = "<group>"; };
 		006EB08625246A1A004FB18F /* account.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = account.db; sourceTree = "<group>"; };
+		006FC9142580A7B1000DC188 /* totalIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = totalIcon.png; sourceTree = "<group>"; };
+		006FC9172581C38B000DC188 /* StatistTaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatistTaViewCell.swift; sourceTree = "<group>"; };
+		006FC9182581C38B000DC188 /* StatistTaViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatistTaViewCell.xib; sourceTree = "<group>"; };
+		006FC92225820DD1000DC188 /* yearicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yearicon.png; sourceTree = "<group>"; };
 		0079B61A2551613A005B87AA /* IncomeDetailTaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeDetailTaViewCell.swift; sourceTree = "<group>"; };
 		0079B61B2551613A005B87AA /* IncomeDetailTaViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeDetailTaViewCell.xib; sourceTree = "<group>"; };
 		0079B61F25524F68005B87AA /* AddRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordViewController.swift; sourceTree = "<group>"; };
@@ -164,9 +170,10 @@
 				0079B62025524F68005B87AA /* AddRecordViewController.xib */,
 				006E5546250B62380089AA9D /* StatisticsViewController.swift */,
 				006E5547250B62380089AA9D /* StatisticsViewController.xib */,
+				006FC9172581C38B000DC188 /* StatistTaViewCell.swift */,
+				006FC9182581C38B000DC188 /* StatistTaViewCell.xib */,
 				006E554A250B62420089AA9D /* MoreViewController.swift */,
 				006E554B250B62430089AA9D /* MoreViewController.xib */,
-				006E554E250B6ACC0089AA9D /* Extension.swift */,
 				006EB08625246A1A004FB18F /* account.db */,
 				006E552F250B5D7E0089AA9D /* Assets.xcassets */,
 				006E5531250B5D7E0089AA9D /* LaunchScreen.storyboard */,
@@ -182,7 +189,7 @@
 				006EAFD82521C5E8004FB18F /* GlobalClass.swift */,
 				006EB055252316C6004FB18F /* GlobalValues.swift */,
 				006EB073252322A5004FB18F /* GlobalFunction.swift */,
-				006EB07625232562004FB18F /* accExtension.swift */,
+				006E554E250B6ACC0089AA9D /* Extension.swift */,
 				006EB00A252315D9004FB18F /* Setup.swift */,
 			);
 			name = Function;
@@ -200,8 +207,10 @@
 				006EAFEA2522FF0C004FB18F /* icon76x76.jpg */,
 				006EAFE32522FF0C004FB18F /* icon80x80.jpg */,
 				006EAFE62522FF0C004FB18F /* icon87x87.jpg */,
+				006FC92225820DD1000DC188 /* yearicon.png */,
 				006EAFEE2522FF0C004FB18F /* icon120x120.jpg */,
 				006EAFED2522FF0C004FB18F /* icon152x152.jpg */,
+				006FC9142580A7B1000DC188 /* totalIcon.png */,
 				006EAFEC2522FF0C004FB18F /* icon167x167.jpg */,
 				006EAFEB2522FF0C004FB18F /* icon180x180.jpg */,
 				006EAFE42522FF0C004FB18F /* icon1024x1024.jpg */,
@@ -299,6 +308,7 @@
 			files = (
 				006EAFF12522FF0C004FB18F /* icon1024x1024.jpg in Resources */,
 				006EAFF82522FF0C004FB18F /* icon180x180.jpg in Resources */,
+				006FC91A2581C38B000DC188 /* StatistTaViewCell.xib in Resources */,
 				006E554D250B62430089AA9D /* MoreViewController.xib in Resources */,
 				006E5533250B5D7E0089AA9D /* LaunchScreen.storyboard in Resources */,
 				006E553D250B5DB00089AA9D /* MainViewController.xib in Resources */,
@@ -307,10 +317,12 @@
 				006D4552250F467200CC65B1 /* DateCoViewCell.xib in Resources */,
 				006EB0842524341C004FB18F /* DetailedTaViewCell.xib in Resources */,
 				006EB07F25242DFB004FB18F /* BOMTaViewCell.xib in Resources */,
+				006FC9152580A7B1000DC188 /* totalIcon.png in Resources */,
 				006EAFF92522FF0C004FB18F /* icon167x167.jpg in Resources */,
 				0079B62225524F68005B87AA /* AddRecordViewController.xib in Resources */,
 				0079B61D2551613A005B87AA /* IncomeDetailTaViewCell.xib in Resources */,
 				006EAFF62522FF0C004FB18F /* icon58x58.jpg in Resources */,
+				006FC92325820DD1000DC188 /* yearicon.png in Resources */,
 				006EAFF02522FF0C004FB18F /* icon80x80.jpg in Resources */,
 				006EAFEF2522FF0C004FB18F /* icon20x20.jpg in Resources */,
 				006EAFFB2522FF0C004FB18F /* icon120x120.jpg in Resources */,
@@ -336,7 +348,7 @@
 				006EB06625232197004FB18F /* FMResultSet.m in Sources */,
 				0079B61C2551613A005B87AA /* IncomeDetailTaViewCell.swift in Sources */,
 				006EB06525232197004FB18F /* FMDatabase.m in Sources */,
-				006EB07725232562004FB18F /* accExtension.swift in Sources */,
+				006FC9192581C38B000DC188 /* StatistTaViewCell.swift in Sources */,
 				006EB074252322A5004FB18F /* GlobalFunction.swift in Sources */,
 				006EB06925232197004FB18F /* FMDatabaseAdditions.m in Sources */,
 				006EB056252316C6004FB18F /* GlobalValues.swift in Sources */,

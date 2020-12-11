@@ -31,3 +31,22 @@ extension UIColor {
     }
 }
 
+extension String{
+func replace(target: String, withString: String) -> String{
+    return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
+    }
+}
+
+//MARK:FMResultSet
+extension FMResultSet {
+    func getString(forColumn: String) -> String {
+        if let r = string(forColumn: forColumn) {
+            return r
+        }
+        return ""
+    }
+    func getInt(forColumn: String) -> Int {
+        let r = int(forColumn: forColumn)
+        return Int(r)
+    }
+}

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol reloadTableView {
+    func reloadAcc()
+}
+
 class AddRecordViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var textMoney: UITextField!
     @IBOutlet var textDate: UITextField!
@@ -15,32 +19,22 @@ class AddRecordViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var textRemark: UITextView!
     @IBOutlet var textPay: UITextField!
     
+    @IBOutlet var btnSave: UIButton!
     var picker = UIPickerView()
     var typeDate = [typeInfo]()
     
+    var delegate:reloadTableView?
+    
     var Operator = ""
     var MoneyOri = ""
-    
     var MoneyOp = ""
+    var date = ""
+    
+    var bkpInfo = bookkeepingInfo()
     override func viewDidLoad() {
         super.viewDidLoad()
-        textRemark.layer.borderWidth = 1
-        textRemark.layer.borderColor = UIColor.black.cgColor
+        setTextField()
         
-        textMoney.delegate = self
-        textMoney.inputView = calView
-        
-        textType.delegate = self
-        textType.inputView = typeView
-        
-        typeDate = typeInfo().searchTypeDB(str: "支出")
-        picker.selectRow(typeDate.count / 2, inComponent: 0, animated: false)
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
-        view.addGestureRecognizer(tap)
-        
-        textType.text = typeDate[typeDate.count / 2].name + "(支出)"
-        // Do any additional setup after loading the view.
     }
    
     override func viewWillAppear(_ animated: Bool) {
@@ -49,142 +43,137 @@ class AddRecordViewController: UIViewController,UITextFieldDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         statusBar(color: UIColor(hexFromString: "#498C51"))
     }
+    
     @IBAction func btnBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func btnSave(_ sender: Any) {
-        
-    }
-    
-    @objc func btnCalView(_ sender: UIButton) {
-        
-        switch sender.tag{
-            //AC
-            case 1:
-                Operator = ""  //驗算方式
-                MoneyOri = ""  //原始金額
-                MoneyOp = ""   //驗算金額
-                textMoney.text = MoneyOri
-                break
-            //mul
-            case 2:
-                Calculation(str: "mul")
-                break
-            //div
-            case 3:
-                Calculation(str: "div")
-                break
-            //del
-            case 4:
-                if Operator == ""{
-                    MoneyOri = String(MoneyOri.dropLast())
-                }else{
-                    MoneyOp = String(MoneyOp.dropLast())
+        if textMoney.text == "" {
+            let alertController = UIAlertController(title: "金額空白", message: "", preferredStyle: .alert)
+            self.present(alertController, animated: true, completion: nil)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                    self.presentedViewController?.dismiss(animated: false, completion: nil)
                 }
-                if Operator == ""{
-                    textMoney.text = MoneyOri
-                }else{
-                    textMoney.text = MoneyOp
-                }
-                break
-            //add
-            case 5:
-                Calculation(str: "add")
-                break
-            //less
-            case 6:
-                Calculation(str: "less")
-                break
-            //equ
-            case 7:
-                if Operator != "" {
-                    Calculation(str: "equ")
-                }
-                break
-            default:
-                if Operator == ""{
-                    MoneyOri = MoneyOri + (sender.titleLabel?.text)!
-                }else{
-                    MoneyOp = MoneyOp + (sender.titleLabel?.text)!
-                }
-                print("MoneyOri:",MoneyOri,"MoneyOp:",MoneyOp)
-                
-                if Operator == ""{
-                    textMoney.text = MoneyOri
-                }else{
-                    textMoney.text = MoneyOp
-                }
-                break
-            }
-    }
-    func Calculation(str:String){
-        var numOri = 0
-        var numOp = 0
-        if MoneyOri == "" {numOri = 0} else { numOri = Int(MoneyOri)!}
-        if MoneyOp == "" {numOp = 0} else { numOp = Int(MoneyOp)!}
-        
-        if Operator == "" { Operator = str }
-        else{
-            if numOp != 0{
-                switch Operator {
-                case "mul":
-                    MoneyOri = String(numOri * numOp)
-                    break
-                case "div":
-                    MoneyOri = String(numOri / numOp)
-                    break
-                case "add":
-                    MoneyOri = String(numOri + numOp)
-                    break
-                case "less":
-                    MoneyOri = String(numOri - numOp)
-                    break
-                default:
-                    break
-                }
-            }
-            textMoney.text = MoneyOri
-            MoneyOp = ""
-            if str != "equ" { Operator = str }
-            
+                return
         }
         
-    }
-   
-    
-    func statusBar(color:UIColor){
-        if #available(iOS 13.0, *) {
-            let statusBar = UIView(frame: UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
-            statusBar.backgroundColor = color
-            statusBar.tag = 100
-            UIApplication.shared.keyWindow?.addSubview(statusBar)
-
-        } else {
-
-            let statusBar = UIApplication.shared.value(forKeyPath:"statusBarWindow.statusBar") as? UIView
-            statusBar?.backgroundColor = color
-
-        }
-        if color == UIColor.black{
-            UIApplication.shared.statusBarStyle = .lightContent
+        let dateFormatter = DateFormatter.init()
+        dateFormatter.dateFormat = "yyyy年MM月dd日"
+        let date = dateFormatter.date(from: textDate.text!)
+        let dateComponents = Calendar.current.dateComponents(in: TimeZone.current, from: date!)
+        
+        let year = String(dateComponents.year!)
+        let Mon = String(dateComponents.month!)
+        let day = String(dateComponents.day!)
+        let weekday = String(dateComponents.weekday! - 1)
+        var split = textType.text!.split(separator: "(")
+        let bkpTypeName = String(split[0])
+        split = split[1].split(separator: ")")
+        let bkpType = String(split[0])
+        
+        let bkp = bookkeepingInfo()
+        bkp.year = year
+        bkp.month = Mon
+        bkp.day = day
+        bkp.week = weekday
+        bkp.type = bkpType
+        bkp.typeName = bkpTypeName
+        bkp.balanceSheet = textMoney.text!
+        bkp.remark = textRemark.text!
+        bkp.paypeople = textPay.text!
+        
+        var title = ""
+        var writeSuc = false
+        
+        if bkpInfo.typeName != "" {
+            writeSuc = bookkeepingInfo().bkpDelete(bkp: bkpInfo)
+            if writeSuc {
+                writeSuc = bookkeepingInfo().bkpWrite(bkp: bkp)
+                if writeSuc{
+                    title = "更新成功"
+                }else{
+                    title = "更新錯誤"
+                }
+            }else{
+                title = "更新錯誤"
+            }
+           
         }else{
-            UIApplication.shared.statusBarStyle = .darkContent
+            writeSuc = bookkeepingInfo().bkpWrite(bkp: bkp)
+            
+            if writeSuc{
+                title = "寫入成功"
+            }else{
+                title = "寫入失敗"
+            }
+        }
+        
+        let alertController = UIAlertController(title: title, message: "", preferredStyle: .alert)
+        self.present(alertController, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.presentedViewController?.dismiss(animated: false, completion: nil)
+                if writeSuc{
+                    self.delegate?.reloadAcc()
+                    self.dismiss(animated: true, completion: nil)
+                }
         }
     }
+    
+    
     
     @objc func dismissKeyBoard(){
         self.view.endEditing(true)
     }
     
-    @objc func closeKeyboard(){
-        self.view.endEditing(true)
+    func setTextField(){
+        textRemark.layer.borderWidth = 1
+        textRemark.layer.borderColor = UIColor.black.cgColor
+        
+        let calView = creatCalView()
+        textMoney.delegate = self
+        textMoney.inputView = calView
+        
+        textMoney.leftViewMode = .always
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 10, height: 50))
+        label.font = UIFont.systemFont(ofSize: 25)
+        label.text = "＄"
+        label.textColor = UIColor.darkGray
+        textMoney.leftView = label
+        
+        let typeView = creatTypeView()
+        textType.delegate = self
+        textType.inputView = typeView
+        textType.tintColor = UIColor.clear
+        
+        typeDate = typeInfo().searchTypeDB(str: "支出")
+        picker.selectRow(typeDate.count / 2, inComponent: 0, animated: false)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
+        view.addGestureRecognizer(tap)
+        
+        textType.text = typeDate[typeDate.count / 2].name + "(支出)"
+        
+        textDate.text = date
+        textDate.delegate = self
+        textDate.tintColor = UIColor.clear
+        textDate.inputView = creatDate()
+        
+        if bkpInfo.typeName != ""{
+            btnSave.setTitle("修改", for: .normal)
+            
+            textMoney.text = bkpInfo.balanceSheet
+            textDate.text = bkpInfo.year + "年" + bkpInfo.month + "月" + bkpInfo.day + "日"
+            textType.text = bkpInfo.typeName + "(\(bkpInfo.type)"
+            textRemark.text = bkpInfo.remark
+            textRemark.text = bkpInfo.paypeople
+        }
     }
 }
 
 //textfield inptView
 extension AddRecordViewController{
-    var calView: UIView {
+    func creatCalView() -> UIView {
         var width = Int(self.view.bounds.size.width)
         var height = 220
         let view = UIView.init(frame: CGRect(x: 0, y: 0, width:width , height: height + 20))
@@ -387,7 +376,7 @@ extension AddRecordViewController{
         return view
     }
     
-    var typeView:UIView{
+    func creatTypeView() -> UIView{
         let width = Int(self.view.bounds.size.width)
         let height = 210
         let view = UIView.init(frame: CGRect(x: 0, y: 0, width:width , height: height ))
@@ -395,19 +384,21 @@ extension AddRecordViewController{
         
         let segment = UISegmentedControl(items: ["支出","收入"])
         segment.selectedSegmentIndex = 0
-        // 設置外觀顏色 預設為藍色
-        segment.tintColor = UIColor.init(hexFromString: "#8091BF")
+        
+        let dic:NSDictionary = [NSAttributedString.Key.foregroundColor:UIColor.white,NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 17)];
+        segment.setTitleTextAttributes(dic as? [NSAttributedString.Key : Any], for: .normal)
+        segment.setTitleTextAttributes(dic as? [NSAttributedString.Key : Any], for: .selected)
+        
         // 設置底色 沒有預設的顏色
         segment.backgroundColor = UIColor.init(hexFromString: "#82B38A")
         
+        segment.selectedSegmentTintColor = UIColor.lightGray
+        
         // 設置切換選項時執行的動作
-        segment.addTarget(
-            self,
-            action:#selector(AddRecordViewController.onChange),
-            for: .valueChanged)
-
+        segment.addTarget(self,action:#selector(AddRecordViewController.onChange),for: .valueChanged)
+        
         // 設置尺寸及位置並放入畫面中
-        segment.frame.size = CGSize(width: width, height: 30)
+        segment.frame.size = CGSize(width: width, height: 35)
         
         picker.frame = CGRect(x: 0, y: 0, width: width, height: 210)
         
@@ -419,6 +410,29 @@ extension AddRecordViewController{
         view.addSubview(segment)
         
         return view
+    }
+    
+    func creatDate() -> UIDatePicker{
+        let picker : UIDatePicker = UIDatePicker()
+        let width = Int(self.view.bounds.size.width)
+        
+        picker.datePickerMode = .date
+        
+        picker.locale = NSLocale(localeIdentifier: "zh_TW") as Locale
+        
+        picker.addTarget(self, action: #selector(dateChanged(sender:)), for: UIControl.Event.valueChanged)
+        
+        picker.backgroundColor = UIColor(hexFromString: "#EBEBEB")
+        picker.frame = CGRect(x:0.0, y:0.0 , width:Double(width), height:230)
+        
+
+        let dateMax = Calendar.current.date(byAdding: .year, value: 30, to: Date())
+        let dateMin = Calendar.current.date(byAdding: .year, value: -10, to: Date())
+        picker.minimumDate = dateMin
+        picker.maximumDate = dateMax
+        picker.preferredDatePickerStyle = .wheels
+        
+        return picker
     }
 }
 //MARK:PickView Segment Function
@@ -452,9 +466,117 @@ extension AddRecordViewController :UIPickerViewDelegate,UIPickerViewDataSource{
         
         typeDate = typeInfo().searchTypeDB(str: search!)
         
-        if search == "支出" { textMoney.textColor = UIColor.red }
-        if search == "收入" { textMoney.textColor = UIColor.init(hexFromString: "#82B38A") }
+        if search == "支出" { textMoney.textColor = UIColor(hexFromString: "#FE545A") }
+        if search == "收入" { textMoney.textColor = UIColor.init(hexFromString: "#498C51") }
         
         picker.reloadAllComponents()
+    }
+}
+
+//MARK:calView內func
+extension AddRecordViewController{
+    @objc func btnCalView(_ sender: UIButton) {
+        
+        switch sender.tag{
+            //AC
+            case 1:
+                Operator = ""  //驗算方式
+                MoneyOri = ""  //原始金額
+                MoneyOp = ""   //驗算金額
+                textMoney.text = MoneyOri
+                break
+            //mul
+            case 2:
+                Calculation(str: "mul")
+                break
+            //div
+            case 3:
+                Calculation(str: "div")
+                break
+            //del
+            case 4:
+                if Operator == ""{
+                    MoneyOri = String(MoneyOri.dropLast())
+                }else{
+                    MoneyOp = String(MoneyOp.dropLast())
+                }
+                if Operator == ""{
+                    textMoney.text = MoneyOri
+                }else{
+                    textMoney.text = MoneyOp
+                }
+                break
+            //add
+            case 5:
+                Calculation(str: "add")
+                break
+            //less
+            case 6:
+                Calculation(str: "less")
+                break
+            //equ
+            case 7:
+                if Operator != "" {
+                    Calculation(str: "equ")
+                }
+                break
+            default:
+                if Operator == ""{
+                    MoneyOri = MoneyOri + (sender.titleLabel?.text)!
+                }else{
+                    MoneyOp = MoneyOp + (sender.titleLabel?.text)!
+                }
+                
+                if Operator == ""{
+                    textMoney.text = MoneyOri
+                }else{
+                    textMoney.text = MoneyOp
+                }
+                break
+            }
+    }
+    func Calculation(str:String){
+        var numOri = 0
+        var numOp = 0
+        if MoneyOri == "" {numOri = 0} else { numOri = Int(MoneyOri)!}
+        if MoneyOp == "" {numOp = 0} else { numOp = Int(MoneyOp)!}
+        
+        if Operator == "" { Operator = str }
+        else{
+            if numOp != 0{
+                switch Operator {
+                case "mul":
+                    MoneyOri = String(numOri * numOp)
+                    break
+                case "div":
+                    MoneyOri = String(numOri / numOp)
+                    break
+                case "add":
+                    MoneyOri = String(numOri + numOp)
+                    break
+                case "less":
+                    MoneyOri = String(numOri - numOp)
+                    break
+                default:
+                    break
+                }
+            }
+            textMoney.text = MoneyOri
+            MoneyOp = ""
+            if str != "equ" { Operator = str }
+            
+        }
+        
+    }
+}
+
+//MARK:datePicker 交換時間
+extension AddRecordViewController{
+    @objc func dateChanged(sender:UIDatePicker){
+        let year = Calendar.current.component(.year, from: sender.date)
+        let month = Calendar.current.component(.month, from: sender.date)
+        let day = Calendar.current.component(.day, from: sender.date)
+        
+        textDate.text = "\(year)年\(month)月\(day)日"
     }
 }

@@ -49,6 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let appUrl = try! fm.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
         let dbPath = (appUrl.path as NSString).appendingPathComponent("account.db")
+        print(dbPath)
         let isExists = fm.fileExists(atPath: dbPath)
         if !isExists {
             let defaultDBPath = (Bundle.main.resourcePath! as NSString).appendingPathComponent("account.db")

@@ -14,7 +14,7 @@ class DateCoViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        bgView.layer.cornerRadius = 20
+        bgView.layer.cornerRadius = 17
     }
 
 }

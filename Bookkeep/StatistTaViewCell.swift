@@ -1,18 +1,18 @@
 //
-//  IncomeDetailTaViewCell.swift
+//  StatistTaViewCell.swift
 //  Bookkeep
 //
-//  Created by aa on 2020/11/3.
+//  Created by aa on 2020/12/10.
 //  Copyright © 2020 Bookkeep. All rights reserved.
 //
 
 import UIKit
 
-class IncomeDetailTaViewCell: UITableViewCell {
-
-    @IBOutlet var labelTypeName: UILabel!
+class StatistTaViewCell: UITableViewCell {
+    @IBOutlet var labelMon: UILabel!
+    @IBOutlet var labelIcom: UILabel!
+    @IBOutlet var labelExp: UILabel!
     @IBOutlet var labelBalance: UILabel!
-    @IBOutlet var labelReMark: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
