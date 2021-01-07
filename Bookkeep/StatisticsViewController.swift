@@ -196,7 +196,11 @@ extension StatisticsViewController : UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "StatistTaViewCell", for: indexPath as IndexPath) as! StatistTaViewCell
         if indexPath.section == 0{
             cell.selectionStyle = .none
-            cell.backgroundColor = UIColor.systemGray5
+            if #available(iOS 13.0, *) {
+                cell.backgroundColor = UIColor.systemGray5
+            } else {
+                // Fallback on earlier versions
+            }
             
             let color = UIColor.darkGray
             cell.labelMon.textColor = color

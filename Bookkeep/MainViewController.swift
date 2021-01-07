@@ -31,8 +31,8 @@ class MainViewController: UIViewController,UITextFieldDelegate {
     var bkpInfos = [bookkeepingInfo]()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         setCell()
+        
         
         days = changeDayOfWeek()
         
@@ -48,9 +48,9 @@ class MainViewController: UIViewController,UITextFieldDelegate {
         takeDatebal(bkps: bkps)
         bkpInfos = bkps
         
-        //accTaView.setEditing(true, animated: false)
+        
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         statusBar(color: UIColor(hexFromString: "#498C51"))
     }
@@ -74,8 +74,9 @@ class MainViewController: UIViewController,UITextFieldDelegate {
         let dateMin = Calendar.current.date(byAdding: .year, value: -10, to: Date())
         picker.minimumDate = dateMin
         picker.maximumDate = dateMax
-        picker.preferredDatePickerStyle = .wheels
-        
+        if #available(iOS 13.4, *) {
+            picker.preferredDatePickerStyle = .wheels
+        }
         textData.inputView = picker
         
         textData.becomeFirstResponder()

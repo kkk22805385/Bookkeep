@@ -17,6 +17,8 @@ func getDBPath() -> String {
     return dbPath
 }
 
+
+
 func statusBar(color:UIColor){
     if #available(iOS 13.0, *) {
         let statusBar = UIView(frame: UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
@@ -33,7 +35,11 @@ func statusBar(color:UIColor){
     if color == UIColor.black{
         UIApplication.shared.statusBarStyle = .lightContent
     }else{
-        UIApplication.shared.statusBarStyle = .darkContent
+        if #available(iOS 13.0, *) {
+            UIApplication.shared.statusBarStyle = .darkContent
+        } else {
+            UIApplication.shared.statusBarStyle = .default
+        }
     }
 }
 func dateConvStr(_ date:Date, dateFormat:String = "yyyy-MM-dd HH:mm:ss") -> String {

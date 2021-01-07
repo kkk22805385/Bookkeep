@@ -23,4 +23,5 @@ struct GlobalValues{
     static var colorType = "light"
     
     static var accVars = [accountVar]()
+
 }

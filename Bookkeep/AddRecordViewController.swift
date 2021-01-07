@@ -12,6 +12,7 @@ protocol reloadTableView {
     func reloadAcc()
 }
 
+
 class AddRecordViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var textMoney: UITextField!
     @IBOutlet var textDate: UITextField!
@@ -38,10 +39,18 @@ class AddRecordViewController: UIViewController,UITextFieldDelegate {
     }
    
     override func viewWillAppear(_ animated: Bool) {
-        statusBar(color: UIColor.black)
+        if #available(iOS 13.0, *) {
+            statusBar(color: UIColor.black)
+        } else {
+            // Fallback on earlier versions
+        }
     }
     override func viewWillDisappear(_ animated: Bool) {
-        statusBar(color: UIColor(hexFromString: "#498C51"))
+        if #available(iOS 13.0, *) {
+            statusBar(color: UIColor(hexFromString: "#498C51"))
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     @IBAction func btnBack(_ sender: Any) {
@@ -207,7 +216,9 @@ extension AddRecordViewController{
         view.addSubview(btnAC)
         
         let btnMult = UIButton.init(frame: CGRect(x: width, y: 0, width: width, height: height))
-        btnMult.setImage(UIImage(systemName: "multiply"), for: .normal)
+        if #available(iOS 13.0, *) {
+            btnMult.setImage(UIImage(systemName: "multiply"), for: .normal)
+        }
         btnMult.tintColor = topText
         btnMult.backgroundColor = topBG
         btnMult.layer.borderWidth = 1
@@ -217,7 +228,9 @@ extension AddRecordViewController{
         view.addSubview(btnMult)
         
         let btnDiv = UIButton.init(frame: CGRect(x: width*2, y: 0, width: width, height: height))
-        btnDiv.setImage(UIImage(systemName: "divide"), for: .normal)
+        if #available(iOS 13.0, *) {
+            btnDiv.setImage(UIImage(systemName: "divide"), for: .normal)
+        }
         btnDiv.tintColor = topText
         btnDiv.backgroundColor = topBG
         btnDiv.layer.borderWidth = 1
@@ -227,7 +240,9 @@ extension AddRecordViewController{
         view.addSubview(btnDiv)
         
         let btnDel = UIButton.init(frame: CGRect(x: width*3, y: 0, width: rightWidth, height: height))
-        btnDel.setImage(UIImage(systemName: "delete.left.fill"), for: .normal)
+        if #available(iOS 13.0, *) {
+            btnDel.setImage(UIImage(systemName: "delete.left.fill"), for: .normal)
+        }
         btnDel.tintColor = rightText
         btnDel.backgroundColor = rightBG
         btnDel.layer.borderWidth = 1
@@ -264,7 +279,9 @@ extension AddRecordViewController{
         view.addSubview(btn9)
         
         let btnAdd = UIButton.init(frame: CGRect(x: width*3, y: height, width: rightWidth, height: height))
-        btnAdd.setImage(UIImage(systemName: "plus"), for: .normal)
+        if #available(iOS 13.0, *) {
+            btnAdd.setImage(UIImage(systemName: "plus"), for: .normal)
+        }
         btnAdd.tintColor = rightText
         btnAdd.backgroundColor = rightBG
         btnAdd.layer.borderWidth = 1
@@ -301,7 +318,9 @@ extension AddRecordViewController{
         view.addSubview(btn6)
         
         let btnLess = UIButton.init(frame: CGRect(x: width*3, y: height*2, width: rightWidth, height: height))
-        btnLess.setImage(UIImage(systemName: "minus"), for: .normal)
+        if #available(iOS 13.0, *) {
+            btnLess.setImage(UIImage(systemName: "minus"), for: .normal)
+        }
         btnLess.tintColor = rightText
         btnLess.backgroundColor = rightBG
         btnLess.layer.borderWidth = 1
@@ -338,7 +357,9 @@ extension AddRecordViewController{
         view.addSubview(btn3)
         
         let btnEqu = UIButton.init(frame: CGRect(x: width*3, y: height*3, width: rightWidth, height: height*2))
-        btnEqu.setImage(UIImage(systemName: "equal"), for: .normal)
+        if #available(iOS 13.0, *) {
+            btnEqu.setImage(UIImage(systemName: "equal"), for: .normal)
+        }
         btnEqu.tintColor = rightText
         btnEqu.backgroundColor = rightBG
         btnEqu.layer.borderWidth = 1
@@ -392,8 +413,9 @@ extension AddRecordViewController{
         // 設置底色 沒有預設的顏色
         segment.backgroundColor = UIColor.init(hexFromString: "#82B38A")
         
-        segment.selectedSegmentTintColor = UIColor.lightGray
-        
+        if #available(iOS 13.0, *) {
+            segment.selectedSegmentTintColor = UIColor.lightGray
+        }
         // 設置切換選項時執行的動作
         segment.addTarget(self,action:#selector(AddRecordViewController.onChange),for: .valueChanged)
         
@@ -430,7 +452,9 @@ extension AddRecordViewController{
         let dateMin = Calendar.current.date(byAdding: .year, value: -10, to: Date())
         picker.minimumDate = dateMin
         picker.maximumDate = dateMax
-        picker.preferredDatePickerStyle = .wheels
+        if #available(iOS 13.4, *) {
+            picker.preferredDatePickerStyle = .wheels
+        }
         
         return picker
     }
