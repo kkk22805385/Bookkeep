@@ -15,7 +15,6 @@ class MainViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var btnDate: UIButton!
     @IBOutlet var textData: UITextField!
     
-    
     var tabBarHeight :CGFloat = 0
     
     let week = ["週日","週一","週二","週三","週四","週五","週六"]
@@ -32,7 +31,6 @@ class MainViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         setCell()
-        
         
         days = changeDayOfWeek()
         

@@ -26,45 +26,14 @@ class StatisticsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         
         creatDatePicker()
-        
-        btnDate.setTitle(String(year) + "年", for: .normal)
-        
-        let bkpinfos = bookkeepingInfo().bkpInfo(year: String(year))
-        
-        tableStats = CalMonBalance(bkpinfos: bkpinfos)
-        
-        let icom = CalValue(str: "收入", bkps: bkpinfos)
-        labelIcom.text = "$" + String(icom)
-        labelIcom.textColor = UIColor(hexFromString: "#498C51")
-        
-        let exp = CalValue(str: "支出", bkps: bkpinfos)
-        labelExp.text = "$" + String(exp)
-        labelExp.textColor = UIColor(hexFromString: "#FE545A")
-        
-        let total = icom - exp
-        labelTotal.text = "$" + String(total)
-        
-        tableView.register(UINib.init(nibName: "StatistTaViewCell", bundle: nil),forCellReuseIdentifier:"StatistTaViewCell")
-        tableView.tableFooterView = UIView()
+        setLayer()
+        setModel()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         view.addGestureRecognizer(tap)
-        
-        let offset = CGSize.init(width: 0, height: 3)
-        let showColor = UIColor.black.cgColor
-        let showOpacitybtn2 :Float = 0.6
-        let redius = CGFloat(10)
-           
-        btnPre.layer.shadowOffset = offset//默认为0,-3
-        btnPre.layer.shadowColor = showColor
-        btnPre.layer.shadowOpacity = showOpacitybtn2//阴影透明度，默认0
-        btnPre.layer.cornerRadius = redius
-        
-        btnNext.layer.shadowOffset = offset//默认为0,-3
-        btnNext.layer.shadowColor = showColor
-        btnNext.layer.shadowOpacity = showOpacitybtn2//阴影透明度，默认0
-        btnNext.layer.cornerRadius = redius
+
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         statusBar(color: UIColor(hexFromString: "#498C51"))
     }
@@ -166,6 +135,43 @@ class StatisticsViewController: UIViewController, UITextFieldDelegate {
     
     @objc func closeKeyboard(){
         self.view.endEditing(true)
+    }
+    func setModel(){
+        btnDate.setTitle(String(year) + "年", for: .normal)
+        
+        let bkpinfos = bookkeepingInfo().bkpInfo(year: String(year))
+        
+        tableStats = CalMonBalance(bkpinfos: bkpinfos)
+        
+        let icom = CalValue(str: "收入", bkps: bkpinfos)
+        labelIcom.text = "$" + String(icom)
+        labelIcom.textColor = UIColor(hexFromString: "#498C51")
+        
+        let exp = CalValue(str: "支出", bkps: bkpinfos)
+        labelExp.text = "$" + String(exp)
+        labelExp.textColor = UIColor(hexFromString: "#FE545A")
+        
+        let total = icom - exp
+        labelTotal.text = "$" + String(total)
+    }
+    func setLayer(){
+        tableView.register(UINib.init(nibName: "StatistTaViewCell", bundle: nil),forCellReuseIdentifier:"StatistTaViewCell")
+        tableView.tableFooterView = UIView()
+        
+        let offset = CGSize.init(width: 0, height: 3)
+        let showColor = UIColor.black.cgColor
+        let showOpacitybtn2 :Float = 0.6
+        let redius = CGFloat(10)
+           
+        btnPre.layer.shadowOffset = offset//默认为0,-3
+        btnPre.layer.shadowColor = showColor
+        btnPre.layer.shadowOpacity = showOpacitybtn2//阴影透明度，默认0
+        btnPre.layer.cornerRadius = redius
+        
+        btnNext.layer.shadowOffset = offset//默认为0,-3
+        btnNext.layer.shadowColor = showColor
+        btnNext.layer.shadowOpacity = showOpacitybtn2//阴影透明度，默认0
+        btnNext.layer.cornerRadius = redius
     }
 }
 
