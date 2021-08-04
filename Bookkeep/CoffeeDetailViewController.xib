@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CoffeeDetailViewController" customModule="Bookkeep" customModuleProvider="target">
+            <connections>
+                <outlet property="dataTable" destination="pJo-yD-hvs" id="aqb-C0-p4O"/>
+                <outlet property="labelCoffeeName" destination="ujv-fC-YqH" id="gJE-Re-n5N"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGo-UN-wEn">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="搜尋類型" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujv-fC-YqH">
+                            <rect key="frame" x="0.0" y="10" width="414" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="WX7-aJ-I0H"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" red="0.96070021390000004" green="0.96083813910000004" blue="0.96067017320000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.50980392159999999" green="0.70196078429999997" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ujv-fC-YqH" secondAttribute="trailing" id="CH1-z4-SR6"/>
+                        <constraint firstItem="ujv-fC-YqH" firstAttribute="centerY" secondItem="sGo-UN-wEn" secondAttribute="centerY" id="ML7-ou-ncg"/>
+                        <constraint firstAttribute="height" constant="60" id="QcD-kX-1kX"/>
+                        <constraint firstItem="ujv-fC-YqH" firstAttribute="leading" secondItem="sGo-UN-wEn" secondAttribute="leading" id="Y3v-TM-NDE"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="I69-fe-r3s">
+                    <rect key="frame" x="0.0" y="60" width="414" height="180"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="kRz-v9-Skx"/>
+                    </constraints>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pJo-yD-hvs">
+                    <rect key="frame" x="0.0" y="240" width="414" height="602"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="5Ee-2u-iII"/>
+                        <outlet property="delegate" destination="-1" id="4pu-9j-VRt"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="pJo-yD-hvs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="77t-RG-xgu"/>
+                <constraint firstAttribute="bottom" secondItem="pJo-yD-hvs" secondAttribute="bottom" id="JRr-Fz-QjE"/>
+                <constraint firstItem="I69-fe-r3s" firstAttribute="top" secondItem="sGo-UN-wEn" secondAttribute="bottom" id="Pdf-Ol-wch"/>
+                <constraint firstItem="pJo-yD-hvs" firstAttribute="top" secondItem="I69-fe-r3s" secondAttribute="bottom" id="TX7-Ia-ORc"/>
+                <constraint firstItem="I69-fe-r3s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dLA-ji-6X2"/>
+                <constraint firstItem="sGo-UN-wEn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dhi-dc-aGh"/>
+                <constraint firstAttribute="trailing" secondItem="pJo-yD-hvs" secondAttribute="trailing" id="gVo-3M-EW6"/>
+                <constraint firstItem="sGo-UN-wEn" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="igK-eL-dLi"/>
+                <constraint firstItem="sGo-UN-wEn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sES-7m-yFV"/>
+                <constraint firstAttribute="trailing" secondItem="I69-fe-r3s" secondAttribute="trailing" id="xPj-1m-iDm"/>
+            </constraints>
+            <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="46" y="80"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="coffee1.jpeg" width="300" height="168"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

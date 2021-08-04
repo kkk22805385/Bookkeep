@@ -21,19 +21,6 @@
 		006E554D250B62430089AA9D /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006E554B250B62430089AA9D /* MoreViewController.xib */; };
 		006E554F250B6ACC0089AA9D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E554E250B6ACC0089AA9D /* Extension.swift */; };
 		006EAFD92521C5E8004FB18F /* GlobalClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006EAFD82521C5E8004FB18F /* GlobalClass.swift */; };
-		006EAFEF2522FF0C004FB18F /* icon20x20.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006EAFE22522FF0C004FB18F /* icon20x20.jpg */; };
-		006EAFF02522FF0C004FB18F /* icon80x80.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006EAFE32522FF0C004FB18F /* icon80x80.jpg */; };
-		006EAFF12522FF0C004FB18F /* icon1024x1024.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006EAFE42522FF0C004FB18F /* icon1024x1024.jpg */; };
-		006EAFF22522FF0C004FB18F /* icon40x40.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006EAFE52522FF0C004FB18F /* icon40x40.jpg */; };
-		006EAFF32522FF0C004FB18F /* icon87x87.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006EAFE62522FF0C004FB18F /* icon87x87.jpg */; };
-		006EAFF42522FF0C004FB18F /* icon60x60.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006EAFE72522FF0C004FB18F /* icon60x60.jpg */; };
-		006EAFF52522FF0C004FB18F /* icon29x29.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006EAFE82522FF0C004FB18F /* icon29x29.jpg */; };
-		006EAFF62522FF0C004FB18F /* icon58x58.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006EAFE92522FF0C004FB18F /* icon58x58.jpg */; };
-		006EAFF72522FF0C004FB18F /* icon76x76.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006EAFEA2522FF0C004FB18F /* icon76x76.jpg */; };
-		006EAFF82522FF0C004FB18F /* icon180x180.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006EAFEB2522FF0C004FB18F /* icon180x180.jpg */; };
-		006EAFF92522FF0C004FB18F /* icon167x167.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006EAFEC2522FF0C004FB18F /* icon167x167.jpg */; };
-		006EAFFA2522FF0C004FB18F /* icon152x152.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006EAFED2522FF0C004FB18F /* icon152x152.jpg */; };
-		006EAFFB2522FF0C004FB18F /* icon120x120.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006EAFEE2522FF0C004FB18F /* icon120x120.jpg */; };
 		006EB00B252315D9004FB18F /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006EB00A252315D9004FB18F /* Setup.swift */; };
 		006EB05225231677004FB18F /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006EB05025231677004FB18F /* KeychainItemAccessibility.swift */; };
 		006EB05325231677004FB18F /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006EB05125231677004FB18F /* KeychainWrapper.swift */; };
@@ -49,10 +36,50 @@
 		006EB0832524341C004FB18F /* DetailedTaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006EB0812524341C004FB18F /* DetailedTaViewCell.swift */; };
 		006EB0842524341C004FB18F /* DetailedTaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006EB0822524341C004FB18F /* DetailedTaViewCell.xib */; };
 		006EB08725246A1A004FB18F /* account.db in Resources */ = {isa = PBXBuildFile; fileRef = 006EB08625246A1A004FB18F /* account.db */; };
-		006FC9152580A7B1000DC188 /* totalIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 006FC9142580A7B1000DC188 /* totalIcon.png */; };
 		006FC9192581C38B000DC188 /* StatistTaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006FC9172581C38B000DC188 /* StatistTaViewCell.swift */; };
 		006FC91A2581C38B000DC188 /* StatistTaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006FC9182581C38B000DC188 /* StatistTaViewCell.xib */; };
-		006FC92325820DD1000DC188 /* yearicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 006FC92225820DD1000DC188 /* yearicon.png */; };
+		007035AA26B2A58D00206FCF /* CoffeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007035A826B2A58D00206FCF /* CoffeeListViewController.swift */; };
+		007035AB26B2A58D00206FCF /* CoffeeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007035A926B2A58D00206FCF /* CoffeeListViewController.xib */; };
+		007035AE26B2A66900206FCF /* CoffeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007035AC26B2A66900206FCF /* CoffeeCell.swift */; };
+		007035AF26B2A66900206FCF /* CoffeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007035AD26B2A66900206FCF /* CoffeeCell.xib */; };
+		007035C926B2A6E400206FCF /* icon80x80.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 007035B026B2A6E200206FCF /* icon80x80.jpg */; };
+		007035CA26B2A6E400206FCF /* star-fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 007035B126B2A6E200206FCF /* star-fill.png */; };
+		007035CB26B2A6E400206FCF /* icon180x180.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 007035B226B2A6E200206FCF /* icon180x180.jpg */; };
+		007035CC26B2A6E400206FCF /* coffeeload.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 007035B326B2A6E200206FCF /* coffeeload.jpeg */; };
+		007035CD26B2A6E400206FCF /* icon60x60.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 007035B426B2A6E200206FCF /* icon60x60.jpg */; };
+		007035CE26B2A6E400206FCF /* icon40x40.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 007035B526B2A6E200206FCF /* icon40x40.jpg */; };
+		007035CF26B2A6E400206FCF /* icon58x58.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 007035B626B2A6E200206FCF /* icon58x58.jpg */; };
+		007035D026B2A6E400206FCF /* yearicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 007035B726B2A6E200206FCF /* yearicon.png */; };
+		007035D126B2A6E400206FCF /* icon152x152.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 007035B826B2A6E200206FCF /* icon152x152.jpg */; };
+		007035D226B2A6E400206FCF /* icon29x29.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 007035B926B2A6E200206FCF /* icon29x29.jpg */; };
+		007035D326B2A6E400206FCF /* coffee5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 007035BA26B2A6E200206FCF /* coffee5.jpeg */; };
+		007035D426B2A6E400206FCF /* coffee4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 007035BB26B2A6E200206FCF /* coffee4.jpeg */; };
+		007035D526B2A6E400206FCF /* coffee1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 007035BC26B2A6E300206FCF /* coffee1.jpeg */; };
+		007035D626B2A6E400206FCF /* det.png in Resources */ = {isa = PBXBuildFile; fileRef = 007035BD26B2A6E300206FCF /* det.png */; };
+		007035D726B2A6E400206FCF /* coffee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 007035BE26B2A6E300206FCF /* coffee.jpg */; };
+		007035D826B2A6E400206FCF /* coffee2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 007035BF26B2A6E300206FCF /* coffee2.jpeg */; };
+		007035D926B2A6E400206FCF /* icon120x120.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 007035C026B2A6E300206FCF /* icon120x120.jpg */; };
+		007035DA26B2A6E400206FCF /* coffee3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 007035C126B2A6E300206FCF /* coffee3.jpeg */; };
+		007035DB26B2A6E400206FCF /* icon76x76.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 007035C226B2A6E300206FCF /* icon76x76.jpg */; };
+		007035DC26B2A6E400206FCF /* totalIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 007035C326B2A6E300206FCF /* totalIcon.png */; };
+		007035DD26B2A6E400206FCF /* icon167x167.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 007035C426B2A6E300206FCF /* icon167x167.jpg */; };
+		007035DE26B2A6E400206FCF /* icon87x87.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 007035C526B2A6E300206FCF /* icon87x87.jpg */; };
+		007035DF26B2A6E400206FCF /* icon20x20.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 007035C626B2A6E300206FCF /* icon20x20.jpg */; };
+		007035E026B2A6E400206FCF /* icon1024x1024.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 007035C726B2A6E300206FCF /* icon1024x1024.jpg */; };
+		007035E126B2A6E400206FCF /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 007035C826B2A6E300206FCF /* star.png */; };
+		007035E426B2A8A300206FCF /* CoffeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007035E326B2A8A300206FCF /* CoffeeData.swift */; };
+		007035E726B2A92700206FCF /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007035E526B2A92600206FCF /* LoadViewController.swift */; };
+		007035E826B2A92700206FCF /* LoadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007035E626B2A92600206FCF /* LoadViewController.xib */; };
+		007035ED26B2AF0100206FCF /* SelAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007035E926B2AF0000206FCF /* SelAreaViewController.swift */; };
+		007035EE26B2AF0100206FCF /* AreaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007035EA26B2AF0000206FCF /* AreaTableViewCell.xib */; };
+		007035EF26B2AF0100206FCF /* AreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007035EB26B2AF0100206FCF /* AreaTableViewCell.swift */; };
+		007035F026B2AF0100206FCF /* SelAreaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007035EC26B2AF0100206FCF /* SelAreaViewController.xib */; };
+		007035F326B3AA6C00206FCF /* CoffeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007035F126B3AA6C00206FCF /* CoffeeDetailViewController.swift */; };
+		007035F426B3AA6C00206FCF /* CoffeeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007035F226B3AA6C00206FCF /* CoffeeDetailViewController.xib */; };
+		007035F726B3DAB100206FCF /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007035F526B3DAB000206FCF /* ScoreCell.swift */; };
+		007035F826B3DAB100206FCF /* ScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007035F626B3DAB100206FCF /* ScoreCell.xib */; };
+		007035FB26B3DDDF00206FCF /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007035F926B3DDDF00206FCF /* DataCell.swift */; };
+		007035FC26B3DDDF00206FCF /* DataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007035FA26B3DDDF00206FCF /* DataCell.xib */; };
 		0079B61C2551613A005B87AA /* IncomeDetailTaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079B61A2551613A005B87AA /* IncomeDetailTaViewCell.swift */; };
 		0079B61D2551613A005B87AA /* IncomeDetailTaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0079B61B2551613A005B87AA /* IncomeDetailTaViewCell.xib */; };
 		0079B62125524F68005B87AA /* AddRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079B61F25524F68005B87AA /* AddRecordViewController.swift */; };
@@ -76,19 +103,6 @@
 		006E554B250B62430089AA9D /* MoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
 		006E554E250B6ACC0089AA9D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		006EAFD82521C5E8004FB18F /* GlobalClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalClass.swift; sourceTree = "<group>"; };
-		006EAFE22522FF0C004FB18F /* icon20x20.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon20x20.jpg; sourceTree = "<group>"; };
-		006EAFE32522FF0C004FB18F /* icon80x80.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon80x80.jpg; sourceTree = "<group>"; };
-		006EAFE42522FF0C004FB18F /* icon1024x1024.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon1024x1024.jpg; sourceTree = "<group>"; };
-		006EAFE52522FF0C004FB18F /* icon40x40.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon40x40.jpg; sourceTree = "<group>"; };
-		006EAFE62522FF0C004FB18F /* icon87x87.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon87x87.jpg; sourceTree = "<group>"; };
-		006EAFE72522FF0C004FB18F /* icon60x60.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon60x60.jpg; sourceTree = "<group>"; };
-		006EAFE82522FF0C004FB18F /* icon29x29.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon29x29.jpg; sourceTree = "<group>"; };
-		006EAFE92522FF0C004FB18F /* icon58x58.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon58x58.jpg; sourceTree = "<group>"; };
-		006EAFEA2522FF0C004FB18F /* icon76x76.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon76x76.jpg; sourceTree = "<group>"; };
-		006EAFEB2522FF0C004FB18F /* icon180x180.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon180x180.jpg; sourceTree = "<group>"; };
-		006EAFEC2522FF0C004FB18F /* icon167x167.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon167x167.jpg; sourceTree = "<group>"; };
-		006EAFED2522FF0C004FB18F /* icon152x152.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon152x152.jpg; sourceTree = "<group>"; };
-		006EAFEE2522FF0C004FB18F /* icon120x120.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon120x120.jpg; sourceTree = "<group>"; };
 		006EB00A252315D9004FB18F /* Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
 		006EB05025231677004FB18F /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		006EB05125231677004FB18F /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
@@ -110,10 +124,50 @@
 		006EB0812524341C004FB18F /* DetailedTaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTaViewCell.swift; sourceTree = "<group>"; };
 		006EB0822524341C004FB18F /* DetailedTaViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedTaViewCell.xib; sourceTree = "<group>"; };
 		006EB08625246A1A004FB18F /* account.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = account.db; sourceTree = "<group>"; };
-		006FC9142580A7B1000DC188 /* totalIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = totalIcon.png; sourceTree = "<group>"; };
 		006FC9172581C38B000DC188 /* StatistTaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatistTaViewCell.swift; sourceTree = "<group>"; };
 		006FC9182581C38B000DC188 /* StatistTaViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatistTaViewCell.xib; sourceTree = "<group>"; };
-		006FC92225820DD1000DC188 /* yearicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yearicon.png; sourceTree = "<group>"; };
+		007035A826B2A58D00206FCF /* CoffeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeListViewController.swift; sourceTree = "<group>"; };
+		007035A926B2A58D00206FCF /* CoffeeListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoffeeListViewController.xib; sourceTree = "<group>"; };
+		007035AC26B2A66900206FCF /* CoffeeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeCell.swift; sourceTree = "<group>"; };
+		007035AD26B2A66900206FCF /* CoffeeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoffeeCell.xib; sourceTree = "<group>"; };
+		007035B026B2A6E200206FCF /* icon80x80.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon80x80.jpg; path = image/icon80x80.jpg; sourceTree = SOURCE_ROOT; };
+		007035B126B2A6E200206FCF /* star-fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-fill.png"; path = "image/star-fill.png"; sourceTree = SOURCE_ROOT; };
+		007035B226B2A6E200206FCF /* icon180x180.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon180x180.jpg; path = image/icon180x180.jpg; sourceTree = SOURCE_ROOT; };
+		007035B326B2A6E200206FCF /* coffeeload.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = coffeeload.jpeg; path = image/coffeeload.jpeg; sourceTree = SOURCE_ROOT; };
+		007035B426B2A6E200206FCF /* icon60x60.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon60x60.jpg; path = image/icon60x60.jpg; sourceTree = SOURCE_ROOT; };
+		007035B526B2A6E200206FCF /* icon40x40.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon40x40.jpg; path = image/icon40x40.jpg; sourceTree = SOURCE_ROOT; };
+		007035B626B2A6E200206FCF /* icon58x58.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon58x58.jpg; path = image/icon58x58.jpg; sourceTree = SOURCE_ROOT; };
+		007035B726B2A6E200206FCF /* yearicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yearicon.png; path = image/yearicon.png; sourceTree = SOURCE_ROOT; };
+		007035B826B2A6E200206FCF /* icon152x152.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon152x152.jpg; path = image/icon152x152.jpg; sourceTree = SOURCE_ROOT; };
+		007035B926B2A6E200206FCF /* icon29x29.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon29x29.jpg; path = image/icon29x29.jpg; sourceTree = SOURCE_ROOT; };
+		007035BA26B2A6E200206FCF /* coffee5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = coffee5.jpeg; path = image/coffee5.jpeg; sourceTree = SOURCE_ROOT; };
+		007035BB26B2A6E200206FCF /* coffee4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = coffee4.jpeg; path = image/coffee4.jpeg; sourceTree = SOURCE_ROOT; };
+		007035BC26B2A6E300206FCF /* coffee1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = coffee1.jpeg; path = image/coffee1.jpeg; sourceTree = SOURCE_ROOT; };
+		007035BD26B2A6E300206FCF /* det.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = det.png; path = image/det.png; sourceTree = SOURCE_ROOT; };
+		007035BE26B2A6E300206FCF /* coffee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = coffee.jpg; path = image/coffee.jpg; sourceTree = SOURCE_ROOT; };
+		007035BF26B2A6E300206FCF /* coffee2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = coffee2.jpeg; path = image/coffee2.jpeg; sourceTree = SOURCE_ROOT; };
+		007035C026B2A6E300206FCF /* icon120x120.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon120x120.jpg; path = image/icon120x120.jpg; sourceTree = SOURCE_ROOT; };
+		007035C126B2A6E300206FCF /* coffee3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = coffee3.jpeg; path = image/coffee3.jpeg; sourceTree = SOURCE_ROOT; };
+		007035C226B2A6E300206FCF /* icon76x76.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon76x76.jpg; path = image/icon76x76.jpg; sourceTree = SOURCE_ROOT; };
+		007035C326B2A6E300206FCF /* totalIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = totalIcon.png; path = image/totalIcon.png; sourceTree = SOURCE_ROOT; };
+		007035C426B2A6E300206FCF /* icon167x167.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon167x167.jpg; path = image/icon167x167.jpg; sourceTree = SOURCE_ROOT; };
+		007035C526B2A6E300206FCF /* icon87x87.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon87x87.jpg; path = image/icon87x87.jpg; sourceTree = SOURCE_ROOT; };
+		007035C626B2A6E300206FCF /* icon20x20.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon20x20.jpg; path = image/icon20x20.jpg; sourceTree = SOURCE_ROOT; };
+		007035C726B2A6E300206FCF /* icon1024x1024.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon1024x1024.jpg; path = image/icon1024x1024.jpg; sourceTree = SOURCE_ROOT; };
+		007035C826B2A6E300206FCF /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = image/star.png; sourceTree = SOURCE_ROOT; };
+		007035E326B2A8A300206FCF /* CoffeeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeData.swift; sourceTree = "<group>"; };
+		007035E526B2A92600206FCF /* LoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
+		007035E626B2A92600206FCF /* LoadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadViewController.xib; sourceTree = "<group>"; };
+		007035E926B2AF0000206FCF /* SelAreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelAreaViewController.swift; sourceTree = "<group>"; };
+		007035EA26B2AF0000206FCF /* AreaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AreaTableViewCell.xib; sourceTree = "<group>"; };
+		007035EB26B2AF0100206FCF /* AreaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewCell.swift; sourceTree = "<group>"; };
+		007035EC26B2AF0100206FCF /* SelAreaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelAreaViewController.xib; sourceTree = "<group>"; };
+		007035F126B3AA6C00206FCF /* CoffeeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailViewController.swift; sourceTree = "<group>"; };
+		007035F226B3AA6C00206FCF /* CoffeeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoffeeDetailViewController.xib; sourceTree = "<group>"; };
+		007035F526B3DAB000206FCF /* ScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
+		007035F626B3DAB100206FCF /* ScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCell.xib; sourceTree = "<group>"; };
+		007035F926B3DDDF00206FCF /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
+		007035FA26B3DDDF00206FCF /* DataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataCell.xib; sourceTree = "<group>"; };
 		0079B61A2551613A005B87AA /* IncomeDetailTaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeDetailTaViewCell.swift; sourceTree = "<group>"; };
 		0079B61B2551613A005B87AA /* IncomeDetailTaViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeDetailTaViewCell.xib; sourceTree = "<group>"; };
 		0079B61F25524F68005B87AA /* AddRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +190,7 @@
 			children = (
 				006E5525250B5D7C0089AA9D /* Bookkeep */,
 				006EAFD72521C582004FB18F /* Function */,
+				007035E226B2A81C00206FCF /* Model */,
 				006EB04F25231667004FB18F /* SwiftKeychainWrapper */,
 				006EB05925232180004FB18F /* FMDB */,
 				006EAFE12522FEE3004FB18F /* image */,
@@ -174,6 +229,22 @@
 				006FC9182581C38B000DC188 /* StatistTaViewCell.xib */,
 				006E554A250B62420089AA9D /* MoreViewController.swift */,
 				006E554B250B62430089AA9D /* MoreViewController.xib */,
+				007035A826B2A58D00206FCF /* CoffeeListViewController.swift */,
+				007035A926B2A58D00206FCF /* CoffeeListViewController.xib */,
+				007035AC26B2A66900206FCF /* CoffeeCell.swift */,
+				007035AD26B2A66900206FCF /* CoffeeCell.xib */,
+				007035E926B2AF0000206FCF /* SelAreaViewController.swift */,
+				007035EC26B2AF0100206FCF /* SelAreaViewController.xib */,
+				007035EB26B2AF0100206FCF /* AreaTableViewCell.swift */,
+				007035EA26B2AF0000206FCF /* AreaTableViewCell.xib */,
+				007035F126B3AA6C00206FCF /* CoffeeDetailViewController.swift */,
+				007035F226B3AA6C00206FCF /* CoffeeDetailViewController.xib */,
+				007035F526B3DAB000206FCF /* ScoreCell.swift */,
+				007035F626B3DAB100206FCF /* ScoreCell.xib */,
+				007035F926B3DDDF00206FCF /* DataCell.swift */,
+				007035FA26B3DDDF00206FCF /* DataCell.xib */,
+				007035E526B2A92600206FCF /* LoadViewController.swift */,
+				007035E626B2A92600206FCF /* LoadViewController.xib */,
 				006EB08625246A1A004FB18F /* account.db */,
 				006E552F250B5D7E0089AA9D /* Assets.xcassets */,
 				006E5531250B5D7E0089AA9D /* LaunchScreen.storyboard */,
@@ -199,21 +270,31 @@
 		006EAFE12522FEE3004FB18F /* image */ = {
 			isa = PBXGroup;
 			children = (
-				006EAFE22522FF0C004FB18F /* icon20x20.jpg */,
-				006EAFE82522FF0C004FB18F /* icon29x29.jpg */,
-				006EAFE52522FF0C004FB18F /* icon40x40.jpg */,
-				006EAFE92522FF0C004FB18F /* icon58x58.jpg */,
-				006EAFE72522FF0C004FB18F /* icon60x60.jpg */,
-				006EAFEA2522FF0C004FB18F /* icon76x76.jpg */,
-				006EAFE32522FF0C004FB18F /* icon80x80.jpg */,
-				006EAFE62522FF0C004FB18F /* icon87x87.jpg */,
-				006FC92225820DD1000DC188 /* yearicon.png */,
-				006EAFEE2522FF0C004FB18F /* icon120x120.jpg */,
-				006EAFED2522FF0C004FB18F /* icon152x152.jpg */,
-				006FC9142580A7B1000DC188 /* totalIcon.png */,
-				006EAFEC2522FF0C004FB18F /* icon167x167.jpg */,
-				006EAFEB2522FF0C004FB18F /* icon180x180.jpg */,
-				006EAFE42522FF0C004FB18F /* icon1024x1024.jpg */,
+				007035BE26B2A6E300206FCF /* coffee.jpg */,
+				007035BC26B2A6E300206FCF /* coffee1.jpeg */,
+				007035BF26B2A6E300206FCF /* coffee2.jpeg */,
+				007035C126B2A6E300206FCF /* coffee3.jpeg */,
+				007035BB26B2A6E200206FCF /* coffee4.jpeg */,
+				007035BA26B2A6E200206FCF /* coffee5.jpeg */,
+				007035B326B2A6E200206FCF /* coffeeload.jpeg */,
+				007035BD26B2A6E300206FCF /* det.png */,
+				007035C626B2A6E300206FCF /* icon20x20.jpg */,
+				007035B926B2A6E200206FCF /* icon29x29.jpg */,
+				007035B526B2A6E200206FCF /* icon40x40.jpg */,
+				007035B626B2A6E200206FCF /* icon58x58.jpg */,
+				007035B426B2A6E200206FCF /* icon60x60.jpg */,
+				007035C226B2A6E300206FCF /* icon76x76.jpg */,
+				007035B026B2A6E200206FCF /* icon80x80.jpg */,
+				007035C526B2A6E300206FCF /* icon87x87.jpg */,
+				007035C026B2A6E300206FCF /* icon120x120.jpg */,
+				007035B826B2A6E200206FCF /* icon152x152.jpg */,
+				007035C426B2A6E300206FCF /* icon167x167.jpg */,
+				007035B226B2A6E200206FCF /* icon180x180.jpg */,
+				007035C726B2A6E300206FCF /* icon1024x1024.jpg */,
+				007035B126B2A6E200206FCF /* star-fill.png */,
+				007035C826B2A6E300206FCF /* star.png */,
+				007035C326B2A6E300206FCF /* totalIcon.png */,
+				007035B726B2A6E200206FCF /* yearicon.png */,
 			);
 			name = image;
 			path = Bookkeep;
@@ -245,6 +326,14 @@
 			);
 			name = FMDB;
 			path = Bookkeep;
+			sourceTree = "<group>";
+		};
+		007035E226B2A81C00206FCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				007035E326B2A8A300206FCF /* CoffeeData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,33 +395,51 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				006EAFF12522FF0C004FB18F /* icon1024x1024.jpg in Resources */,
-				006EAFF82522FF0C004FB18F /* icon180x180.jpg in Resources */,
+				007035F426B3AA6C00206FCF /* CoffeeDetailViewController.xib in Resources */,
+				007035D626B2A6E400206FCF /* det.png in Resources */,
+				007035CA26B2A6E400206FCF /* star-fill.png in Resources */,
+				007035CF26B2A6E400206FCF /* icon58x58.jpg in Resources */,
 				006FC91A2581C38B000DC188 /* StatistTaViewCell.xib in Resources */,
+				007035D126B2A6E400206FCF /* icon152x152.jpg in Resources */,
+				007035DB26B2A6E400206FCF /* icon76x76.jpg in Resources */,
 				006E554D250B62430089AA9D /* MoreViewController.xib in Resources */,
 				006E5533250B5D7E0089AA9D /* LaunchScreen.storyboard in Resources */,
 				006E553D250B5DB00089AA9D /* MainViewController.xib in Resources */,
+				007035F826B3DAB100206FCF /* ScoreCell.xib in Resources */,
+				007035CD26B2A6E400206FCF /* icon60x60.jpg in Resources */,
+				007035EE26B2AF0100206FCF /* AreaTableViewCell.xib in Resources */,
+				007035FC26B3DDDF00206FCF /* DataCell.xib in Resources */,
 				006E5530250B5D7E0089AA9D /* Assets.xcassets in Resources */,
-				006EAFF22522FF0C004FB18F /* icon40x40.jpg in Resources */,
+				007035D026B2A6E400206FCF /* yearicon.png in Resources */,
 				006D4552250F467200CC65B1 /* DateCoViewCell.xib in Resources */,
 				006EB0842524341C004FB18F /* DetailedTaViewCell.xib in Resources */,
+				007035D526B2A6E400206FCF /* coffee1.jpeg in Resources */,
+				007035D426B2A6E400206FCF /* coffee4.jpeg in Resources */,
 				006EB07F25242DFB004FB18F /* BOMTaViewCell.xib in Resources */,
-				006FC9152580A7B1000DC188 /* totalIcon.png in Resources */,
-				006EAFF92522FF0C004FB18F /* icon167x167.jpg in Resources */,
+				007035AB26B2A58D00206FCF /* CoffeeListViewController.xib in Resources */,
 				0079B62225524F68005B87AA /* AddRecordViewController.xib in Resources */,
 				0079B61D2551613A005B87AA /* IncomeDetailTaViewCell.xib in Resources */,
-				006EAFF62522FF0C004FB18F /* icon58x58.jpg in Resources */,
-				006FC92325820DD1000DC188 /* yearicon.png in Resources */,
-				006EAFF02522FF0C004FB18F /* icon80x80.jpg in Resources */,
-				006EAFEF2522FF0C004FB18F /* icon20x20.jpg in Resources */,
-				006EAFFB2522FF0C004FB18F /* icon120x120.jpg in Resources */,
-				006EAFF42522FF0C004FB18F /* icon60x60.jpg in Resources */,
-				006EAFF52522FF0C004FB18F /* icon29x29.jpg in Resources */,
+				007035E026B2A6E400206FCF /* icon1024x1024.jpg in Resources */,
+				007035CB26B2A6E400206FCF /* icon180x180.jpg in Resources */,
+				007035DD26B2A6E400206FCF /* icon167x167.jpg in Resources */,
+				007035E126B2A6E400206FCF /* star.png in Resources */,
+				007035D226B2A6E400206FCF /* icon29x29.jpg in Resources */,
+				007035DF26B2A6E400206FCF /* icon20x20.jpg in Resources */,
+				007035D826B2A6E400206FCF /* coffee2.jpeg in Resources */,
+				007035CE26B2A6E400206FCF /* icon40x40.jpg in Resources */,
+				007035C926B2A6E400206FCF /* icon80x80.jpg in Resources */,
+				007035D726B2A6E400206FCF /* coffee.jpg in Resources */,
+				007035DE26B2A6E400206FCF /* icon87x87.jpg in Resources */,
+				007035F026B2AF0100206FCF /* SelAreaViewController.xib in Resources */,
 				006E5549250B62380089AA9D /* StatisticsViewController.xib in Resources */,
-				006EAFF72522FF0C004FB18F /* icon76x76.jpg in Resources */,
+				007035AF26B2A66900206FCF /* CoffeeCell.xib in Resources */,
+				007035D926B2A6E400206FCF /* icon120x120.jpg in Resources */,
+				007035CC26B2A6E400206FCF /* coffeeload.jpeg in Resources */,
 				006EB08725246A1A004FB18F /* account.db in Resources */,
-				006EAFF32522FF0C004FB18F /* icon87x87.jpg in Resources */,
-				006EAFFA2522FF0C004FB18F /* icon152x152.jpg in Resources */,
+				007035D326B2A6E400206FCF /* coffee5.jpeg in Resources */,
+				007035DC26B2A6E400206FCF /* totalIcon.png in Resources */,
+				007035E826B2A92700206FCF /* LoadViewController.xib in Resources */,
+				007035DA26B2A6E400206FCF /* coffee3.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,18 +450,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007035EF26B2AF0100206FCF /* AreaTableViewCell.swift in Sources */,
+				007035E726B2A92700206FCF /* LoadViewController.swift in Sources */,
 				006D4551250F467200CC65B1 /* DateCoViewCell.swift in Sources */,
+				007035FB26B3DDDF00206FCF /* DataCell.swift in Sources */,
 				006E554C250B62430089AA9D /* MoreViewController.swift in Sources */,
+				007035F326B3AA6C00206FCF /* CoffeeDetailViewController.swift in Sources */,
 				006EB06625232197004FB18F /* FMResultSet.m in Sources */,
+				007035E426B2A8A300206FCF /* CoffeeData.swift in Sources */,
 				0079B61C2551613A005B87AA /* IncomeDetailTaViewCell.swift in Sources */,
 				006EB06525232197004FB18F /* FMDatabase.m in Sources */,
 				006FC9192581C38B000DC188 /* StatistTaViewCell.swift in Sources */,
 				006EB074252322A5004FB18F /* GlobalFunction.swift in Sources */,
 				006EB06925232197004FB18F /* FMDatabaseAdditions.m in Sources */,
+				007035ED26B2AF0100206FCF /* SelAreaViewController.swift in Sources */,
 				006EB056252316C6004FB18F /* GlobalValues.swift in Sources */,
 				0079B62125524F68005B87AA /* AddRecordViewController.swift in Sources */,
+				007035AE26B2A66900206FCF /* CoffeeCell.swift in Sources */,
 				006EB0832524341C004FB18F /* DetailedTaViewCell.swift in Sources */,
 				006E553C250B5DB00089AA9D /* MainViewController.swift in Sources */,
+				007035AA26B2A58D00206FCF /* CoffeeListViewController.swift in Sources */,
+				007035F726B3DAB100206FCF /* ScoreCell.swift in Sources */,
 				006EB05325231677004FB18F /* KeychainWrapper.swift in Sources */,
 				006EB06725232197004FB18F /* FMDatabasePool.m in Sources */,
 				006EB05225231677004FB18F /* KeychainItemAccessibility.swift in Sources */,
@@ -504,15 +620,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2CVZ5K69RK;
+				DEVELOPMENT_TEAM = WRY8Z2AANQ;
 				INFOPLIST_FILE = Bookkeep/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Bookkeep;
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.butterlionprince.Bookkeep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bookkeep/Bookkeep-Bridging-Header.h";
@@ -529,15 +645,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2CVZ5K69RK;
+				DEVELOPMENT_TEAM = WRY8Z2AANQ;
 				INFOPLIST_FILE = Bookkeep/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Bookkeep;
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.butterlionprince.Bookkeep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bookkeep/Bookkeep-Bridging-Header.h";
